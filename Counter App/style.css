@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    min-height: auto;
+    width: 40%;
+    max-width: 1200px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.counter{
+    text-align: center;
+}
+.spn-element{
+    display: flex;
+    justify-content: center;
+}
+.btn-controls{
+    padding: 10px;
+    margin: 20px;
+    width: 20%;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.clicks{
+     text-align: center;
+     padding: 10px;
+}
