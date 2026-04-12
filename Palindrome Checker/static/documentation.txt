@@ -1,0 +1,19 @@
+Concept 1:- Hide error messages after a set time
+
+  errDiv.textContent = `Enter a word please!`
+        errDiv.style.display = "block"
+        setTimeout(()=>{
+            errDiv.style.display = "none"
+        },3000)
+------------------------------------------
+Concept 2:- onkeydown
+When we have to let user give data (input) via "Enter" key
+
+let inputBox = document.querySelector(".input") //input box
+
+inputBox.addEventListener("keydown",function(e) {
+  if(e.key==="Enter"){    
+    //further code
+  }
+})
+----------------------------------------------

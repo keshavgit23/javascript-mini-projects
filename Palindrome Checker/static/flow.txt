@@ -1,0 +1,14 @@
+Architecture:-
+Frontend:- 
+-> Input box for string or number
+-> Button to ckeck for palindrome
+
+Backend:-
+-> EventListerner
+-> if(number){
+    numberPalindromeCheck()
+}else if(string){
+    stringPalindromeCheck()
+}else{
+    Enter a string or number
+}
