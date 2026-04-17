@@ -6,73 +6,71 @@
 body {
     height: 100vh;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
 }
 
 .nav {
-    padding: 10 0;
+    padding: 10px 0;
     width: 100%;
     background-color: rgba(25, 0, 255, 0.602);
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(20px,5vw,30px);
+    font-size: clamp(20px, 5vw, 30px);
     color: white;
 }
 
-.container{
-    display:flex;
+.container {
+    display: flex;
+    flex: 1;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 20px;
-     height: auto;
+    height: auto;
     width: 90%;
     max-width: 500px;
     gap: 24px;
     margin: 0 auto;
 }
-.label{
-    font-size: clamp(18px,5vw,38px);  
-    font-family: 'Times New Roman', Times, serif; 
+
+.label {
+    font-size: clamp(18px, 5vw, 38px);
+    font-family: 'Times New Roman', Times, serif;
 }
 
-.input{
+.input {
     padding: 10px 10px;
     height: 40px;
     width: 100%;
     border-radius: 10px;
 }
-.input:focus{
+
+.input:focus {
     border-color: red;
     outline: none;
     box-shadow: 0 0 10px rgba(25, 0, 255, 0.602);
 }
 
-.btn{
+.btn {
     font-size: 20px;
     border-radius: 20px;
     height: 45px;
     width: 100%;
     text-align: center;
-    background: rgb(138, 24, 214);
+    background: rgb(24, 14, 165);
     color: white;
 }
-.btn:hover{
-    background:rgb(149, 73, 193);
-    color: black;
+
+.btn:hover {
+    background: rgb(66, 66, 177);
     border: 2px solid black;
 }
 
-.showResult{
+.showResult {
     font-family: 'Times New Roman', Times, serif;
     font-size: 30px;
 }
 
-        
-        
-@media only screen and (max-width: 455px){
+@media only screen and (max-width: 455px) {
 
     .container {
         width: 95%;
@@ -98,3 +96,126 @@ body {
         text-align: center;
     }
 }
+
+.main{
+    display: flex;
+    min-height: 100vh;
+}
+.side-bar{
+    width: 250px;
+    height: 100vh;
+    background: rgba(25, 0, 255, 0.374);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    position: sticky; 
+    top: 0;
+    align-self: start;
+    transition: 300ms ease-in-out; 
+    overflow: hidden;
+}
+
+.side-bar.close{
+    padding: 5px;
+    width: 50px;
+}
+
+.history{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.heading{
+    font-family: 'Times New Roman', Times, serifs;
+    font-size: 25px;
+    color: rgba(0, 0, 0, 0.637);
+    padding: 10px 10px;
+}
+.inputs{
+    margin: 5px;
+    padding: 10px 6px;
+}
+.recent-input{
+    padding: 5px 5px;
+    margin: 5px;
+    border: 2px solid black;
+    width: 200px;
+    background-color: rgb(89, 57, 219);
+    color: white;
+    border-radius: 5px;
+}
+.recent-input:hover{
+    background-color: rgb(62, 44, 166);
+}
+
+.clear{
+    margin: 5px;
+    padding: 8px 6px;
+    width: 230px;
+    border-radius: 8px;
+    background: red;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+.clear:hover{
+    background: rgba(255, 0, 0, 0.642);
+    color: black;
+}
+
+#toggle-btn{
+    margin-left: auto;
+    padding: 5px 6px;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+}
+#toggle-btn svg{
+        transition: rotate 150ms ease ;
+}
+.history ul li{
+    display: flex;
+    gap: 5px;
+}
+#toggle-btn:hover{
+    background-color: rgba(25, 0, 255, 0.374);
+}
+
+.side-bar.close .heading,
+.side-bar.close .recent-input,
+.side-bar.close .clear {
+    display: none;
+}
+
+.history ul li {
+    display: flex;
+    align-items: center;
+}
+
+.side-bar.close .history ul li {
+    justify-content: center;
+}
+
+#toggle-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.side-bar.close #toggle-btn svg {
+    transform: rotate(180deg);
+}
+
+.side-bar .heading,
+.side-bar .recent-input,
+.side-bar .clear {
+    transition: opacity 0.2s ease;
+}
+
+/* .side-bar.close .heading,
+.side-bar.close .recent-input,
+.side-bar.close .clear {
+    opacity: 0;
+    pointer-events: none;
+} */

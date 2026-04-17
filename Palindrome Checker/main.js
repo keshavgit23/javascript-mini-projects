@@ -1,6 +1,7 @@
 import { numberPalindrome } from "./Modules/numberPalindrome.js"
 import { stringPalindrome } from "./Modules/stringPalindrome.js"
 import { checkNumber, checkString } from "./Modules/checkPhrase.js"
+import {openToggle} from "./Modules/sidebar.js"
 
 let get_btn = document.querySelector(".btn")
 let errDiv = document.querySelector(".showResult")

@@ -1,0 +1,4 @@
+#1 clamp() function is used to set a value that will adjust responsively between a minimum 
+value, prefered value, and a maximum value depending on viewport size.
+
+syntax:- clamp(min,prefrred,max)

@@ -3,7 +3,7 @@ Frontend:-
 -> Input box for string or number
 -> Button to ckeck for palindrome
 
-Backend:-
+Logic:-
 -> EventListerner
 -> if(number){
     numberPalindromeCheck()
