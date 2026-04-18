@@ -1,21 +1,24 @@
 
-document.body.style.background = "red"
-console.log("SIDEBAR LOADED")
-let sideBar = document.querySelector(".side-bar")
-let toggleBtn = document.getElementById("toggle-btn")
+export function openToggle() {
 
+    document.addEventListener("DOMContentLoaded", () => {
 
-    toggleBtn.addEventListener("click",()=>{
-        console.log("clicked");
-        sideBar.classList.toggle("close")
+        let sideBar = document.querySelector(".side-bar")
+        let toggleBtn = document.getElementById("toggle-btn")
+
+        if (!toggleBtn || !sideBar) {
+            console.log("Sidebar elements not found");
+            return;
+        }
+        toggleBtn.addEventListener("click", () => {
+            console.log("clicked");
+            sideBar.classList.toggle("close")
+            sideBar.classList.toggle('open')
+        })
+
+        toggleBtn.addEventListener("click", () => {
+            console.log(sideBar.classList);
+        });
     })
 
-export function openToggle(){
-    toggleBtn.addEventListener("click",()=>{
-        sideBar.classList.toggle("open")
-    })
 }
-
-toggleBtn.addEventListener("click", () => {
-    console.log(sideBar.classList);
-});
