@@ -1,3 +1,6 @@
+
+document.body.style.background = "red"
+console.log("SIDEBAR LOADED")
 let sideBar = document.querySelector(".side-bar")
 let toggleBtn = document.getElementById("toggle-btn")
 

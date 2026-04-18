@@ -1,3 +1,9 @@
-const express = require('express')
+import express from 'express'
 const router = express.Router()
-const pool = require('./db') 
+import pool from '../db.js'
+
+router.get('/', (req, res) => {
+    res.send('Hello Palindrome checker')
+})
+
+export default router
