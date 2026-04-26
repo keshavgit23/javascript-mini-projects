@@ -7,7 +7,7 @@ import cors from 'cors'
 import pool from './db.js'
 
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 5000
 
 app.use(express.json())
 
@@ -70,6 +70,6 @@ app.delete('/api/clear', async (req, res) => {
         console.log("Error: ", err)
     }
 })
-app.listen(port, () => {
-    console.log(`Server running at port: ${port}`)
+app.listen(PORT, () => {
+    console.log(`Server running at PORT: ${PORT}`)
 });
