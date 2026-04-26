@@ -97,59 +97,63 @@ body {
     }
 }
 
-.main{
+.main {
     display: flex;
     min-height: 100vh;
 }
-.side-bar{
+
+.side-bar {
     width: 250px;
     height: 100vh;
     background: rgba(25, 0, 255, 0.374);
     flex-shrink: 0;
     box-sizing: border-box;
-    position: sticky; 
+    position: sticky;
     top: 0;
     align-self: start;
-    transition: 300ms ease-in-out; 
+    transition: 300ms ease-in-out;
     overflow: hidden;
 }
 
-.side-bar.close{
+.side-bar.close {
     padding: 5px;
     width: 50px;
 }
 
-.history{
+.history {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 5px;
 }
 
-.heading{
+.heading {
     font-family: 'Times New Roman', Times, serifs;
     font-size: 25px;
-    color: rgba(0, 0, 0, 0.637);
+    color: rgba(0, 0, 0, 0.957);
     padding: 10px 10px;
 }
-.inputs{
+
+.inputs {
     margin: 5px;
-    padding: 10px 6px;
+    font-size: 18px;
 }
-.recent-input{
-    padding: 5px 5px;
+
+.recent-input {
+    padding: 10px 5px;
     margin: 5px;
     border: 2px solid black;
-    width: 200px;
+    width: 210px;
     background-color: rgb(89, 57, 219);
     color: white;
     border-radius: 5px;
 }
-.recent-input:hover{
+
+.recent-input:hover {
     background-color: rgb(62, 44, 166);
 }
 
-.clear{
+.clear {
     margin: 5px;
     padding: 8px 6px;
     width: 230px;
@@ -160,12 +164,13 @@ body {
     font-size: 18px;
     font-weight: bold;
 }
-.clear:hover{
+
+.clear:hover {
     background: rgba(255, 0, 0, 0.642);
     color: black;
 }
 
-#toggle-btn{
+#toggle-btn {
     margin-left: auto;
     padding: 5px 6px;
     border: none;
@@ -173,14 +178,17 @@ body {
     background: none;
     cursor: pointer;
 }
-#toggle-btn svg{
-        transition: rotate 150ms ease ;
+
+#toggle-btn svg {
+    transition: rotate 150ms ease;
 }
-.history ul li{
+
+.history ul li {
     display: flex;
     gap: 5px;
 }
-#toggle-btn:hover{
+
+#toggle-btn:hover {
     background-color: rgba(25, 0, 255, 0.374);
 }
 
@@ -219,3 +227,10 @@ body {
     opacity: 0;
     pointer-events: none;
 } */
+
+.clear-result{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    padding: 10px 10px;
+    font-weight: bold;
+}

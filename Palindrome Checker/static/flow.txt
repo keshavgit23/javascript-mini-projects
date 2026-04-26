@@ -12,3 +12,24 @@ Logic:-
 }else{
     Enter a string or number
 }
+
+
+
+
+
+
+
+
+
+
+
+
+if(!isNaN(val)){
+    let input_num = Number(val)
+    let check_num = numberPalindrome(input_num)
+    checkNumber(check_num)
+  }else{
+    let lower = val.toLowerCase()
+    let check_str = stringPalindrome(lower)
+    checkString(check_str)
+  }

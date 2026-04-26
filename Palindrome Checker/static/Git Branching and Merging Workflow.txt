@@ -1,0 +1,6 @@
+Quick way (CLI merge into main)
+
+git checkout main
+git pull origin main
+git merge feature/api-integration
+git push origin main

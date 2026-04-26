@@ -11,14 +11,14 @@ export function openToggle() {
             return;
         }
         toggleBtn.addEventListener("click", () => {
-            console.log("clicked");
+            // console.log("clicked");
             sideBar.classList.toggle("close")
             sideBar.classList.toggle('open')
         })
 
-        toggleBtn.addEventListener("click", () => {
-            console.log(sideBar.classList);
-        });
+        // toggleBtn.addEventListener("click", () => {
+        //     console.log(sideBar.classList);
+        // });
     })
 
 }
