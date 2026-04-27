@@ -17,6 +17,9 @@ app.use(cors({
 
 app.use('/palindrome', inputRouter)
 
+app.get('/',(req,res)=>{
+    res.send('Backend is running')
+})
 app.post('/api/data', async (req, res) => {
 
     const { input } = req.body
