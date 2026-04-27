@@ -1,7 +1,7 @@
 
 export async function loadHistory() {
     try {
-        let res = await fetch("http://localhost:3000/api/history", {
+        let res = await fetch("https://javascript-mini-projects-kwpq.onrender.com/api/history", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

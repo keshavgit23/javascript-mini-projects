@@ -39,7 +39,7 @@ get_btn.addEventListener("click", async () => {
     }, 3000);
   } else {
     try {
-      const res = await fetch("http://localhost:3000/api/data", {
+      const res = await fetch("https://javascript-mini-projects-kwpq.onrender.com/api/data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -53,7 +53,7 @@ get_btn.addEventListener("click", async () => {
       console.log(data)
 
       if (!res.ok) {
-        // console.log("Error: ", data)
+         console.log("Error: ", data)
         throw new Error("Server error!")
       }
       // const data = await res.json() //res.json() always returns object

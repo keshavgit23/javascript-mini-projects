@@ -3,7 +3,7 @@ let clearResult = document.querySelector(".clear-result")
 export async function clearHistory() {
     try {
         clearBtn.addEventListener("click", async () => {
-            let res = await fetch("http://localhost:3000/api/clear", {
+            let res = await fetch("https://javascript-mini-projects-kwpq.onrender.com/api/clear", {
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json"
