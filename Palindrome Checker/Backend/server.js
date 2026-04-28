@@ -6,6 +6,12 @@ import inputRouter from '../Backend/routes/userInput.js'
 import cors from 'cors'
 import pool from './db.js'
 
+await pool.query(`
+  CREATE TABLE IF NOT EXISTS user_inputs (
+    id SERIAL PRIMARY KEY,
+    text TEXT NOT NULL
+  )
+`);
 const app = express()
 const PORT = process.env.PORT || 5000
 
@@ -17,19 +23,19 @@ const allowedOrigins = [
     "https://javascript-palindrome-checker.vercel.app"
 ]
 app.use(cors({
-    origin: function(origin,callback)
-{
-    if(!origin){
-        return callback(null,true)
-    }
+    origin: function (origin, callback) {
+        if (!origin) {
+            return callback(null, true)
+        }
 
-    if(allowedOrigins.includes(origin)){
-        callback(null,true)
-    }else{
-        callback(new Error("Not allowed bt CORS"))
-    }
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true)
+        } else {
+            callback(new Error("Not allowed bt CORS"))
+        }
 
-}}))
+    }
+}))
 
 app.use('/palindrome', inputRouter)
 
