@@ -12,12 +12,12 @@ const PORT = process.env.PORT || 5000
 app.use(express.json())
 
 app.use(cors({
-    origin: "http://127.0.0.1:5500"
+    origin: process.env.CLIENT_URL
 }))
 
 app.use('/palindrome', inputRouter)
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.send('Backend is running')
 })
 app.post('/api/data', async (req, res) => {

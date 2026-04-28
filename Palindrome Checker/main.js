@@ -53,8 +53,8 @@ get_btn.addEventListener("click", async () => {
       console.log(data)
 
       if (!res.ok) {
-         console.log("Error: ", data)
-        throw new Error("Server error!")
+        console.error("Backend Error:",data)
+        throw new Error(data.error || "Server error!")
       }
       // const data = await res.json() //res.json() always returns object
       // console.log(data)

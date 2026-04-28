@@ -13,7 +13,8 @@ export async function loadHistory() {
         // console.log(response)
 
         if (!res.ok) {
-            throw Error("Server Error!")
+            const text = await res.text()
+            throw Error(text || "Server Error!")
         }
         newDiv.innerHTML = ""
 
