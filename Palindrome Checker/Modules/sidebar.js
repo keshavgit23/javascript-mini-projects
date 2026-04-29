@@ -13,7 +13,7 @@ export function openToggle() {
         toggleBtn.addEventListener("click", () => {
             // console.log("clicked");
             sideBar.classList.toggle("close")
-            sideBar.classList.toggle('open')
+            // sideBar.classList.toggle("open")
         })
 
         // toggleBtn.addEventListener("click", () => {

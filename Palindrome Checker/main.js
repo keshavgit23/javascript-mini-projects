@@ -10,13 +10,23 @@ openToggle()
 window.onload = function () {
   loadHistory()
 }
-window.onload = function () {
-  clearHistory()
+
+let clearBtn = document.querySelector(".clear")
+if (clearBtn) {
+  clearBtn.addEventListener("click", () => {
+    // const container = document.querySelector(".history")
+    // container.innerHTML = "Cleared!"
+    try{
+      clearHistory()
+    }catch(err){
+      console.error("Error to clear history!",err.message)
+      // container.innerHTML = "Error clearing history"
+    }
+    
+  })
 }
-
-
 let get_btn = document.querySelector(".btn")
-console.log(get_btn)
+// console.log(get_btn)
 let output = document.querySelector(".showResult")
 
 get_btn.addEventListener("click", async () => {
@@ -33,7 +43,7 @@ get_btn.addEventListener("click", async () => {
   } else if (val < 0) {
     output.style.display = "block"
     output.style.color = "red"
-    output.textContent = "Value cam't be negative!"
+    output.textContent = "Value can't be negative!"
     setTimeout(() => {
       output.style.display = "none"
     }, 3000);
@@ -53,7 +63,7 @@ get_btn.addEventListener("click", async () => {
       console.log(data)
 
       if (!res.ok) {
-        console.error("Backend Error:",data)
+        console.error("Backend Error:", data)
         throw new Error(data.error || "Server error!")
       }
       // const data = await res.json() //res.json() always returns object
@@ -75,6 +85,8 @@ get_btn.addEventListener("click", async () => {
       console.log("Error:", err)
     }
   }
-
+  input.value = ""
   loadHistory()
 })
+
+

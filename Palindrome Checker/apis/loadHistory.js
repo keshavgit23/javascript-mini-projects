@@ -19,7 +19,7 @@ export async function loadHistory() {
         newDiv.innerHTML = ""
 
         let output = response.data // output is array
-        // console.log(output)
+        console.log(output)
         output.forEach(elem => {
             let appendDiv = document.createElement('div')
             // console.log(appendDiv)
