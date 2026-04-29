@@ -194,7 +194,8 @@ body {
 
 .side-bar.close .heading,
 .side-bar.close .recent-input,
-.side-bar.close .clear {
+.side-bar.close .clear,
+.side-bar.close .clear-result{
     display: none;
 }
 
