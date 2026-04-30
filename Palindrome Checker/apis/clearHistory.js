@@ -1,9 +1,11 @@
+import { API_BASE_URL } from "../main"
+
 let clearBtn = document.querySelector(".clear")
 let clearResult = document.querySelector(".clear-result")
 export async function clearHistory() {
     try {
 
-        let res = await fetch("https://javascript-mini-projects-kwpq.onrender.com/api/clear", {
+        let res = await fetch(`${API_BASE_URL}/api/clear`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

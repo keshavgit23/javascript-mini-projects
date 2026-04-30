@@ -6,6 +6,8 @@ import { loadHistory } from "./apis/loadHistory.js"
 import { clearHistory } from "./apis/clearHistory.js"
 
 
+export const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://javascript-mini-projects-kwpq.onrender.com"
+
 openToggle()
 window.onload = function () {
   loadHistory()
@@ -16,13 +18,13 @@ if (clearBtn) {
   clearBtn.addEventListener("click", () => {
     // const container = document.querySelector(".history")
     // container.innerHTML = "Cleared!"
-    try{
+    try {
       clearHistory()
-    }catch(err){
-      console.error("Error to clear history!",err.message)
+    } catch (err) {
+      console.error("Error to clear history!", err.message)
       // container.innerHTML = "Error clearing history"
     }
-    
+
   })
 }
 let get_btn = document.querySelector(".btn")
@@ -49,7 +51,7 @@ get_btn.addEventListener("click", async () => {
     }, 3000);
   } else {
     try {
-      const res = await fetch("https://javascript-mini-projects-kwpq.onrender.com/api/data", {
+      const res = await fetch(`${API_BASE_URL}/api/data`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

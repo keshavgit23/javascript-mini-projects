@@ -1,7 +1,8 @@
+import { API_BASE_URL } from "../main"
 
 export async function loadHistory() {
     try {
-        let res = await fetch("https://javascript-mini-projects-kwpq.onrender.com/api/history", {
+        let res = await fetch(`${API_BASE_URL}/api/history`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
