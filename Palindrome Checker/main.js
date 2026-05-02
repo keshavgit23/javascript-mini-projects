@@ -4,9 +4,8 @@ import { checkNumber, checkString } from "./Modules/checkPhrase.js"
 import { openToggle } from "./Modules/sidebar.js"
 import { loadHistory } from "./apis/loadHistory.js"
 import { clearHistory } from "./apis/clearHistory.js"
+import { API_BASE_URL } from "./config.js"
 
-
-export const API_BASE_URL = window.location.hostname === "localhost" ? "http://localhost:5000" : "https://javascript-mini-projects-kwpq.onrender.com"
 
 openToggle()
 window.onload = function () {

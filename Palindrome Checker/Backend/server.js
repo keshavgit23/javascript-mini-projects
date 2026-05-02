@@ -30,13 +30,12 @@ app.use(cors({
 
         if (allowedOrigins.includes(origin)) {
             callback(null, true)
-        } else {
-            callback(new Error("Not allowed bt CORS"))
         }
-
-    }
+        return callback(new Error("Not allowed by CORS"));
+    },
+     methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
 }))
-
 app.use('/palindrome', inputRouter)
 
 app.get('/', (req, res) => {
@@ -52,7 +51,7 @@ app.post('/api/data', async (req, res) => {
         )
         console.log("Full result:", result)
         console.log("Rows:", result.rows)
-        res.json({
+        return res.json({
             message: "Saved",
             data: result.rows[0]
         })
@@ -66,7 +65,7 @@ app.post('/api/data', async (req, res) => {
 app.get('/api/history', async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM user_inputs")
-        res.json({
+       return res.json({
             message: "Fetched",
             data: result.rows
         })

@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../main"
+import { API_BASE_URL } from "../config.js"
 
 let clearBtn = document.querySelector(".clear")
 let clearResult = document.querySelector(".clear-result")
