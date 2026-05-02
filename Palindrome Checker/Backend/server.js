@@ -20,7 +20,8 @@ app.use(express.json())
 const allowedOrigins = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
-    "https://javascript-palindrome-checker.vercel.app"
+    "https://javascript-palindrome-checker.vercel.app",
+    "https://javascript-mini-projects-kwpq.onrender.com"
 ]
 app.use(cors({
     origin: function (origin, callback) {
@@ -33,7 +34,7 @@ app.use(cors({
         }
         return callback(new Error("Not allowed by CORS"));
     },
-     methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
+    methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }))
 app.use('/palindrome', inputRouter)
@@ -57,7 +58,7 @@ app.post('/api/data', async (req, res) => {
         })
     } catch (err) {
         console.log("Error: ", err)
-        res.status(500).json({ error: err.message })
+        return res.status(500).json({ error: err.message })
     }
 })
 
@@ -65,12 +66,13 @@ app.post('/api/data', async (req, res) => {
 app.get('/api/history', async (req, res) => {
     try {
         const result = await pool.query("SELECT * FROM user_inputs")
-       return res.json({
+        return res.json({
             message: "Fetched",
             data: result.rows
         })
     } catch (err) {
         console.log("Error: ", err)
+        return res.status(500).json({ err: err.message })
     }
 })
 
@@ -92,6 +94,7 @@ app.delete('/api/clear', async (req, res) => {
 
     } catch (err) {
         console.log("Error: ", err)
+        return res.status(500).json({err: err.message})
     }
 })
 app.listen(PORT, () => {

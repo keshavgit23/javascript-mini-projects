@@ -9,9 +9,9 @@ export async function loadHistory() {
             }
         })
         let newDiv = document.querySelector(".inputs")
-
+        console.log(res)
         const response = await res.json() // response is object
-        // console.log(response)
+        console.log(response)
 
         if (!res.ok) {
             const text = await res.text()
