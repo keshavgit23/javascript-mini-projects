@@ -30,9 +30,9 @@ app.use(cors({
         }
 
         if (allowedOrigins.includes(origin)) {
-            callback(null, true)
+            return callback(null, true)
         }
-        return callback(new Error("Not allowed by CORS"));
+        return callback(null,false);
     },
     methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
