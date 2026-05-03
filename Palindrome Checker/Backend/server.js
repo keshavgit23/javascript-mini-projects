@@ -37,7 +37,6 @@ app.use(cors({
     methods: ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }))
-app.use('/palindrome', inputRouter)
 
 app.get('/', (req, res) => {
     res.send('Backend is running')
